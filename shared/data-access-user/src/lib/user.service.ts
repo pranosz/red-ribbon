@@ -11,11 +11,13 @@ export class UserService {
 
   checkCredentials(username: string, password: string) {
     if (username === 'demo' && password === 'demo') {
+      console.log("checkCredentials true");
       this.isUserLoggedIn.next(true);
     }
   }
   
   logout() {
+    console.log("logout false");
     this.isUserLoggedIn.next(false);
   }
 }

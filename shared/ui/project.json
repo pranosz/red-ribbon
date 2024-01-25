@@ -1,7 +1,7 @@
 {
-  "name": "shared-data-access-user2",
+  "name": "shared-ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "shared/data-access-user2/src",
+  "sourceRoot": "shared/ui/src",
   "prefix": "red-ribbon",
   "tags": [],
   "projectType": "library",
@@ -10,7 +10,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "shared/data-access-user2/jest.config.ts",
+        "jestConfig": "shared/ui/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -24,10 +24,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "shared/data-access-user2/**/*.ts",
-          "shared/data-access-user2/**/*.html"
-        ]
+        "lintFilePatterns": ["shared/ui/**/*.ts", "shared/ui/**/*.html"]
       }
     }
   }

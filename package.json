@@ -2,7 +2,9 @@
   "name": "@red-ribbon/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "red-dev": "npx nx run dashboard:serve --devRemotes=login,products --watch=true"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~16.2.0",
