@@ -12,4 +12,9 @@ module.exports = withModuleFederation({
    *   ['app2', 'https://app2.example.com'],
    * ]
    */
+
+  remotes: [
+      ['login', '../login/remoteEntry.mjs'],
+      ['products', '../products/remoteEntry.mjs'],
+   ]
 });

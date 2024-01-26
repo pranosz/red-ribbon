@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "red-dev": "npx nx run dashboard:serve --devRemotes=login,products --watch=true"
+    "red-dev": "npx nx run dashboard:serve --devRemotes=login,products --watch=true",
+    "red-build": "npx nx run dashboard:build --baseHref=/dist/apps/dashboard"
   },
   "private": true,
   "dependencies": {
