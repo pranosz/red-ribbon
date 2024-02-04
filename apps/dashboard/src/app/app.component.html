@@ -1,10 +1,11 @@
-<ul class="remote-menu">
-  <li><a routerLink="/">Home</a></li>
-  <li><a routerLink="login">Login</a></li>
-  <li><a routerLink="products">Products</a></li>
-</ul>
-
-<p>Is user login: {{isUserLogin | async}}</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a routerLink="/">Home</a>
+    <a routerLink="login">Login</a>
+    <a routerLink="products">Products</a>
+    <p>Is user login: {{isUserLogin | async}}</p>
+  </mat-toolbar-row>
+</mat-toolbar>
 
 <red-ribbon-button label="hej hej"></red-ribbon-button>
 
