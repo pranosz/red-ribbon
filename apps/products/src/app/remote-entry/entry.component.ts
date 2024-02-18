@@ -2,6 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'red-ribbon-products-entry',
-  template: `<red-ribbon-nx-welcome></red-ribbon-nx-welcome>`,
+  template: `<red-ribbon-products></red-ribbon-products>`,
 })
 export class RemoteEntryComponent {}

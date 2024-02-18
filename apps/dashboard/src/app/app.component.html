@@ -1,12 +1,13 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <a routerLink="/">Home</a>
-    <a routerLink="login">Login</a>
-    <a routerLink="products">Products</a>
-    <p>Is user login: {{isUserLogin | async}}</p>
-  </mat-toolbar-row>
+    <button mat-icon-button aria-label="home" routerLink="/">
+      <mat-icon aria-hidden="false" aria-label="home icon" fontIcon="home"></mat-icon>
+    </button>
+    <span class="toolbar-spacer"></span>
+      <p>Is user login: {{isUserLogin | async}}</p>
+    <span class="toolbar-spacer"></span>
+    <button mat-icon-button aria-label="home" routerLink="login">
+      <mat-icon aria-hidden="false" aria-label="home icon" fontIcon="login"></mat-icon>
+    </button>
 </mat-toolbar>
-
-<red-ribbon-button label="hej hej"></red-ribbon-button>
 
 <router-outlet></router-outlet>
