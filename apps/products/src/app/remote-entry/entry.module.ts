@@ -1,19 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
 import { RemoteEntryComponent } from './entry.component';
 import { remoteRoutes } from './entry.routes';
-import { ProductsComponent } from '../products/products.component';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatTableModule} from '@angular/material/table';
+import { ProductsModule } from '../products/products.module';
 
 @NgModule({
-  declarations: [RemoteEntryComponent, ProductsComponent],
+  declarations: [RemoteEntryComponent],
   imports: [
-    CommonModule, 
-    MatTableModule,
-    MatPaginatorModule,
+    CommonModule,
+    ProductsModule,
     RouterModule.forChild(remoteRoutes)],
   providers: [],
 })
