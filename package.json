@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "red-dev": "npx nx run dashboard:serve --devRemotes=login,products --watch=true",
+    "admin-dev": "npx nx run dashboard:serve --devRemotes=login,products --watch=true",
     "red-build": "npx nx run dashboard:build --baseHref=/dist/apps/dashboard"
   },
   "private": true,

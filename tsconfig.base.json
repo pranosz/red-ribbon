@@ -19,6 +19,9 @@
         "shared/data-access-user/src/index.ts"
       ],
       "@red-ribbon/shared/ui": ["shared/ui/src/index.ts"],
+      "admin-products/Module": [
+        "admin-apps/admin-products/src/app/remote-entry/entry.module.ts"
+      ],
       "login/Module": ["apps/login/src/app/remote-entry/entry.module.ts"],
       "products/Module": ["apps/products/src/app/remote-entry/entry.module.ts"]
     }

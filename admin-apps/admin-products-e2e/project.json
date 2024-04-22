@@ -1,0 +1,33 @@
+{
+  "name": "admin-products-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "admin-apps/admin-products-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "admin-apps/admin-products-e2e/cypress.config.ts",
+        "devServerTarget": "admin-products:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "admin-products:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "admin-products:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["admin-apps/admin-products-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["admin-products"]
+}

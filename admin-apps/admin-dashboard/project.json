@@ -1,0 +1,112 @@
+{
+  "name": "admin-dashboard",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "red-ribbon",
+  "sourceRoot": "admin-apps/admin-dashboard/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/admin-apps/admin-dashboard",
+        "index": "admin-apps/admin-dashboard/src/index.html",
+        "main": "admin-apps/admin-dashboard/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "admin-apps/admin-dashboard/tsconfig.app.json",
+        "assets": [
+          "admin-apps/admin-dashboard/src/favicon.ico",
+          "admin-apps/admin-dashboard/src/assets"
+        ],
+        "styles": ["admin-apps/admin-dashboard/src/styles.scss"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "admin-apps/admin-dashboard/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "admin-apps/admin-dashboard/webpack.prod.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nx/angular:module-federation-dev-server",
+      "options": {
+        "port": 4200,
+        "publicHost": "http://localhost:4200"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "admin-dashboard:build:production"
+        },
+        "development": {
+          "browserTarget": "admin-dashboard:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "admin-dashboard:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "admin-apps/admin-dashboard/**/*.ts",
+          "admin-apps/admin-dashboard/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "admin-apps/admin-dashboard/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "admin-dashboard:build",
+        "port": 4200
+      }
+    }
+  }
+}
